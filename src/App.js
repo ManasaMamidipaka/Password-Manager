@@ -58,7 +58,11 @@ class App extends Component {
     }
   }
 
-  searchList = id => {
+  searchList = event => {
+    this.setState({searchInput: event.target.value})
+  }
+
+  deleteItem = id => {
     const {latestList} = this.state
     const newList = latestList.filter(eachValue => eachValue.id !== id)
     const check = newList.length !== 0
